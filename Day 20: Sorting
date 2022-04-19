@@ -1,0 +1,43 @@
+import java.io.*
+import java.math.*
+import java.security.*
+import java.text.*
+import java.util.*
+import java.util.concurrent.*
+import java.util.function.*
+import java.util.regex.*
+import java.util.stream.*
+import kotlin.collections.*
+import kotlin.comparisons.*
+import kotlin.io.*
+import kotlin.jvm.*
+import kotlin.jvm.functions.*
+import kotlin.jvm.internal.*
+import kotlin.ranges.*
+import kotlin.sequences.*
+import kotlin.text.*
+
+fun main(args: Array<String>) {
+    val n = readLine()!!.trim().toInt()
+    val array = readLine()!!.trimEnd().split(" ").map{ it.toInt() }.toTypedArray()
+    var temp=0
+    var swapCount=0
+    var i=0
+    for(i in 0..(n-1)){
+        for(j in 0..(n-2)){
+            if(array[j]>array[j+1]){
+                    temp=array[j].toInt();
+                    array[j]=array[j+1].toInt();
+                    array[j+1]=temp;
+                    swapCount++;   
+            }
+        }
+        if(swapCount==0){
+                break;
+        }
+    }
+    println("Array is sorted in "+swapCount+" swaps.")
+    println("First Element: "+array[0])
+    println("Last Element: "+array[array.size-1])
+    // Write your code here
+}
