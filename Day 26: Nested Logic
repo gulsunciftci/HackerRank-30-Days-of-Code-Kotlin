@@ -1,0 +1,28 @@
+import java.io.*
+import java.util.*
+
+fun main(args: Array<String>) {
+
+var penal:Int=0
+val returned= readLine()!!.trimEnd().split(" ").map{ it.toInt() }.toTypedArray()
+val end = readLine()!!.trimEnd().split(" ").map{ it.toInt() }.toTypedArray()
+
+if((returned[0] in 1..31)&&(end[0] in 1..31)&&(returned[1] in 1..12)&&(end[1] in 1..12)&&(returned[2] in 1..3000)&&(end[2] in 1..3000)){
+    
+if(returned[2].equals(end[2])){
+
+   if((returned[1].equals(end[1]) && returned[0].equals(end[0])) || returned[1]  <end[1]){
+        penal=0
+    }
+    else if(returned[1].equals(end[1]) && returned[0]>end[0]){
+        penal=15*(returned[0]-end[0])
+    }
+    else if(returned[1]>end[1]){
+        penal=500*(returned[1]-end[1])        
+    }
+}
+else if(returned[2]>end[2]){
+    penal=10000
+}}
+println(penal)
+}
