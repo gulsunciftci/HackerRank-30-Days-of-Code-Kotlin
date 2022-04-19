@@ -1,0 +1,31 @@
+import java.io.*
+import java.util.*
+
+fun main(args: Array<String>) {
+    val myMap= HashMap<String, Int>()
+    var num=readLine()!!.trim().toInt()
+    if((num>=1)&&(num<=100000)){
+    for(i in 1..num){
+       var givenName=""
+       var givenNum=0
+       var givenTotal=readLine()!!.trim()
+       givenName+= givenTotal.split(" ")[0]
+       givenNum+= givenTotal.split(" ")[1].toInt()
+       myMap.put(givenName,givenNum)
+    }
+    for(j in 1..num){
+       var wanted=""
+       try {
+         wanted=readLine()!!.trim()
+       }   
+       catch(e: Exception) {
+           break
+        }
+       if(myMap.contains(wanted)){
+           println((wanted+"="+ myMap.get(wanted)).trim())
+       }
+       else{
+           println("Not found")
+       }}
+    }
+}
