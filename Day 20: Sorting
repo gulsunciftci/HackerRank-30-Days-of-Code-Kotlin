@@ -39,5 +39,4 @@ fun main(args: Array<String>) {
     println("Array is sorted in "+swapCount+" swaps.")
     println("First Element: "+array[0])
     println("Last Element: "+array[array.size-1])
-    // Write your code here
 }
